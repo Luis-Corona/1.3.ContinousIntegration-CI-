@@ -1,26 +1,25 @@
-name: CI/CD Workflow
+name: CI Workflow
 
 on:
   push:
     branches:
-      - main
+      - main  # Esto se activa cuando hay un push a la rama principal
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-
+    runs-on: ubuntu-latest  # Se ejecutará en un entorno Ubuntu
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v2  # Esto descarga el código del repositorio
 
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '14'
+        node-version: '14'  # Instala la versión 14 de Node.js
 
     - name: Install dependencies
-      run: npm install
+      run: npm install  # Instala todas las dependencias definidas en package.json
 
     - name: Run build
-      run: npm run build
+      run: npm run build  # Si tienes un script de construcción definido en package.json
