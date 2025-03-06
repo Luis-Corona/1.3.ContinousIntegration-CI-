@@ -9,7 +9,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    environment: production  # Aquí se asocia el job con el entorno "production"
 
     steps:
     - name: Checkout code
